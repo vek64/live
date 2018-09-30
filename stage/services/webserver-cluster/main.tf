@@ -13,7 +13,7 @@ terraform {
 
 
 module "webserver-cluster" {
-      source = "git::git@github.com:vek64/modules.git//services/webserver-cluster?ref=v0.0.1"
+      source = "git::git@github.com:vek64/modules.git//services/webserver-cluster?ref=v0.0.3"
 
 //    source    = "../../../modules/services/webserver-cluster"
 
