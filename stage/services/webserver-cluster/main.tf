@@ -13,17 +13,19 @@ terraform {
 
 
 module "webserver-cluster" {
-//      source = "git::git@github.com:vek64/modules.git//services/webserver-cluster?ref=v0.0.3"
-      source = "git::git@github.com:vek64/modules.git//services/webserver-cluster"
+//      source = "git::git@github.com:vek64/modules.git//services/webserver-cluster?ref=v0.0.//3"
+//      source = "git::git@github.com:vek64/modules.git//services/webserver-cluster"
 
-//    source    = "../../../modules/services/webserver-cluster"
+    source    = "../../../../modules/services/webserver-cluster"
 
     cluster_name	= "webserver-stage"
     db_remote_state_bucket = "vadim-terraform-state"
     db_remote_state_key = "state/stage/data-stores/mysql/terraform.tfstate"
 
+    server_text = "New server STAGE"
+
     instance_type = "t2.micro"
-    image_id = "ami-0e32ec5bc225539f5"
+    ami = "ami-0e32ec5bc225539f5"
 
     min_size		= 2
     max_size		= 3
